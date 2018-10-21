@@ -8,7 +8,7 @@ class Content extends Component {
   render() {
 		const { body } = this.props;
 		return (
-			<div className="content flow-text">
+			<div>
 				{body} 
 			</div>
 		);
