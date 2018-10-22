@@ -2,7 +2,7 @@
   "name": "burger-queen",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mirenovi.github.io/cdmx-2018-06-bc-core-am-burger-queen/",
+  "homepage": "https://mirenovi.github.io/cdmx-2018-06-bc-core-am-burger-queen ",
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
