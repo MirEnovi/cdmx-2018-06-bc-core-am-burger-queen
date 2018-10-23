@@ -13,7 +13,7 @@ const AppRoutes = () => {
 		<BrowserRouter basename = { process.env.PUBLIC_URL }>
 			<Switch>
 				<Route path = '/' component = { Login } exact />
-				<Route path = '/menu' component = { Menu }  />
+				<Route path = '/menu' component = { Menu } exact />
 				<Route component = { Page404 } />
 			</Switch>
 		</BrowserRouter>
