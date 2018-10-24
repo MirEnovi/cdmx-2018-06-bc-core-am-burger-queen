@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
 class Page404 extends Component {
-
   render() {
     return (
 			<div className="Pague404">
-				<h4>
+				<h1>
 					Page 404
-				</h4>
+				</h1>
 		</div>
     );
   }
-}
+};
 
 export default Page404;
