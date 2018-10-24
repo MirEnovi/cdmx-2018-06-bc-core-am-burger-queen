@@ -1,9 +1,10 @@
 import React from 'react';
+import Nav from '../global/nav/nav';
 
 const Menu = () => {
   return (
 		<section>
-			<h1> este es un Menu </h1>
+			<Nav/>
 		</section>
   );
 }

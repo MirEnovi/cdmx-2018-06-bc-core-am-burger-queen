@@ -1,0 +1,21 @@
+.logo {
+	height: 30vh;
+}
+
+.login {
+	margin: 5em;
+}
+
+
+.form {
+  padding: 20px;
+  width: 100vw;
+  font-size: 3em;
+}
+
+.log-button {
+  font-size: 3em;
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+}

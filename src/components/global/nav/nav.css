@@ -1,0 +1,23 @@
+.nav-header {
+  background-color: #282c34;
+  /* min-height: 10vh; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* align-items: stretch; */
+  /* justify-content: center;  */
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Nav-logo {
+	height: 2em;
+	width: 2.5em;
+}
+
+.nav-margin{
+  display: flex;
+}
+
+.nav-button {
+  margin-left: 3em;
+}
