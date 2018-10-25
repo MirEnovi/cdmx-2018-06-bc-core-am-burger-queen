@@ -3,7 +3,7 @@ import { Route, Switch,	BrowserRouter } from 'react-router-dom';
 
 
 import App from './components/app/App'; // Componente Principal
-import Login from './components/login';
+import Login from './components/Login';
 import Menu from './components/menu'; 
 import Page404 from './components/page404';
 

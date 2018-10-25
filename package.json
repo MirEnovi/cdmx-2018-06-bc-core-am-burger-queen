@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://mirenovi.github.io/cdmx-2018-06-bc-core-am-burger-queen",
   "dependencies": {
+    "firebase": "^5.5.5",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
