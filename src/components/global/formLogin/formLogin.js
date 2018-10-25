@@ -1,27 +1,49 @@
-import React from 'react';
-import {Row, Input, Icon } from 'react-materialize';
-import Logo from '../../assets/burguer4.png';
+import React, { Component } from 'react';
+import {Row } from 'react-materialize';
+import Logo from '../../assets/burguerB3.png';
 import './formLogin.css';
 
-const FormLogin = () => {
-	return (
-		<section className='login'>
-			<img src={Logo} className='logo' alt='logo burger' />
-			<h2>Burger Queen</h2>
-			<h4>Iniciar Sesión</h4>
-			<Row className='form'>
-				<Input s={12} xl={6} label="Usuario" validate>
-					<Icon>person</Icon>
-				</Input>
-				<Input s={12} xl={6} label="Contraseña" type="password" validate >
-					<Icon>lock</Icon>
-				</Input>
-			</Row>
-			<Row>
-				<button className='hoverable login-button yellow darken-4 waves-effect waves-light btn'>Entrar</button>
-			</Row>
-		</section>
-	);
+class FormLogin extends Component {
+	constructor(props) {
+		super(props);
+		this.user = React.createRef();
+    this.password = React.createRef();
+	};
+
+	// componentWillMount = () => {
+  //   console.log(this.props);
+  // }
+
+	signIn = () => {
+		const u = {
+			user:this.user.current.value,
+			password:this.password.current.value
+		};
+		this.props.login(u.user, u.password);
+	};
+
+	render() {
+		const { user, password } = this;
+		return (
+			<section className='login'>
+				<img src={Logo} className='logo' alt='logo burger' />
+				<h2 className= 'font-title'>Burger <span className='font-queen'>Queen</span></h2>
+				<h4 >Iniciar Sesión</h4>
+				<Row className='form'>
+					<input className=' col s12 l6 offset-l3' type='email' placeholder='Usuario' ref = {user}/>
+					<input className=' col s12 l6 offset-l3' type='password' placeholder='Contraseña' ref = {password}/>
+				</Row>
+				<Row>
+					<button className='hoverable login-button yellow darken-4 waves-effect waves-light btn' onClick={this.signIn}>Entrar</button>
+				</Row>
+				<Row>
+					{/* <a>
+						¿Olvidaste tu Contraseña?
+					</a> */}
+				</Row>
+			</section>
+		);
+	}
 };
 
 export default FormLogin;
