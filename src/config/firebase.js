@@ -10,14 +10,17 @@ const firebaseCredentials = {
 };
 
 firebase.initializeApp(firebaseCredentials);
+export const auth = firebase.auth();
+// const db = firebase.firestore();
+
 
 export default firebase;
 
 
 export const initSesion = (email, password) => {
-	firebase.auth().signInWithEmailAndPassword(email, password)
-		.then(() => { 
-			console.log('Se ha logueado');
+	auth.signInWithEmailAndPassword(email, password)
+		.then((res) => { 
+			// console.log(res);
 			return })
 		// .then(()=>)
 		.catch((error) => {
@@ -29,10 +32,12 @@ export const initSesion = (email, password) => {
     
 }
 
+
+
 export const logout = () => {
-	firebase.auth().signOut().then(() => {
-		// Sign-out successful.
-	}).catch((error) => {
-		// An error happened.
-	});
+	auth.signOut().then(() => {
+		console.log('Desconectado')
+		return
+	})
+	.catch((error) => console.log(`Error: ${error.code}: ${error.message}`));	
 }

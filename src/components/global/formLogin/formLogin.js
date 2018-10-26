@@ -30,11 +30,11 @@ class FormLogin extends Component {
 				<h2 className= 'font-title'>Burger <span className='font-queen'>Queen</span></h2>
 				<h4 >Iniciar Sesión</h4>
 				<Row className='form'>
-					<input className=' col s12 l6 offset-l3' type='email' placeholder='Usuario' ref = {user}/>
-					<input className=' col s12 l6 offset-l3' type='password' placeholder='Contraseña' ref = {password}/>
-				</Row>
-				<Row>
-					<button className='hoverable login-button yellow darken-4 waves-effect waves-light btn' onClick={this.signIn}>Entrar</button>
+					<input className=' col s10 l6 offset-s1 offset-l3' type='email' placeholder='Usuario' ref = {user}/>
+					<input className=' col s10 l6 offset-s1 offset-l3' type='password' placeholder='Contraseña' ref = {password}/>
+					<Row>
+						<button className='hoverable yellow darken-4 waves-effect waves-light btn col s10 l6 offset-s1 offset-l3 login-button' onClick={this.signIn}>Entrar</button>
+					</Row>
 				</Row>
 				<Row>
 					{/* <a>
