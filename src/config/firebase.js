@@ -20,7 +20,7 @@ export default firebase;
 export const initSesion = (email, password) => {
 	auth.signInWithEmailAndPassword(email, password)
 		.then((res) => { 
-			// console.log(res);
+			console.log(`conectado ${res}`);
 			return })
 		// .then(()=>)
 		.catch((error) => {

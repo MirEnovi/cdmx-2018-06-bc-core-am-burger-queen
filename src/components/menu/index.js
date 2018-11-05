@@ -1,3 +1,4 @@
+/* eslint-disable no-redeclare */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Row } from 'react-materialize';
@@ -6,7 +7,7 @@ import './style.css';
 import { auth } from '../../config/firebase';
 import MenuData from '../../data/menu.json';
 import Nav from '../global/nav/nav';
-import ButtonMenu from '../global/button/button';
+import {ButtonMenu} from '../global/button/button';
 import Command from '../global/cardCommand/command';
 
 class Menu extends Component {
@@ -15,8 +16,12 @@ class Menu extends Component {
 		this.state = {
 			uid: null,
 			menuDesayuno: false,
-			menuAlmuerzo: true
-		}
+			menuAlmuerzo: true,
+			order:[],
+			diner: 'Cliente'
+		};
+		this.dinerWrite = React.createRef();
+
 	}
 
 	componentWillMount = () => {
@@ -24,50 +29,114 @@ class Menu extends Component {
 		if (user) {
 			this.setState({
 				uid: user.uid
-			})
-		}
+			});
+		};
+	};
+
+	componentDidMount = () => {
+		this.setState({
+			diner:this.dinerWrite.current.value
+		});
+	};
+
+	goMenuAlmuerzo = () => {
+		this.setState({
+			menuDesayuno: false,
+			menuAlmuerzo: true
+		})
+	};
+
+	goMenuDesayuno = () => {
+		this.setState({
+			menuDesayuno: true,
+			menuAlmuerzo: false
+		})
 	}
 
+	weaponOrdered = (product) => {
+		this.setState({
+			diner:this.dinerWrite.current.value
+		});
+		const {order} = this.state;
+		order.push(product);
+		this.setState({
+			order
+		});
+		console.log(this.state.order);
+	};
 
-
+	deleteItem = (index) => {
+		console.log(index);
+		// const {order} = this.state;
+		// order.splice(index, 1);
+		// console.log(order);
+	}
+	
+	
 	render() {
-		const buttonsMenuAl = (MenuData.Almuerzo).map((item, index) => {
-			return (
-				<ButtonMenu index = {index}
-										type = {item.type}
-										price = {item.price} 
-										color = 'deep-orange accent-3'
-										/>
-			)
-		});
-		const buttonsMenuDs = (MenuData.Desayuno).map((item, index) => {
-			return (
-				<ButtonMenu index = {index}
-										type = {item.type}
-										price = {item.price} 
-										color = 'cyan darken-4' />
-			)
-		});
-		const { uid } = this.state;
+		const { uid, menuDesayuno, menuAlmuerzo } = this.state;
+		const {dinerWrite} = this;
+		if (menuDesayuno){
+			var buttonsMenu = (MenuData.Desayuno).map((item, index) => {
+				return (
+					<ButtonMenu keyI = {`desayuno-${index}`}
+											type = {item.type}
+											price = {item.price} 
+											color = 'cyan darken-4'
+											function = {(()=>{
+												const product = {
+													type: item.type,
+													price: item.price,
+												};
+												this.weaponOrdered(product);
+											})}
+											del = {(()=>{
+												const i = index;
+												this.deleteItem(i);
+											})}
+											/>
+				)
+			});
+		} else if (menuAlmuerzo) {
+			var buttonsMenu = (MenuData.Almuerzo).map((item, index) => {
+				return (
+					<ButtonMenu keyI = {`almuerzo-${index}`}
+											type = {item.type}
+											price = {item.price} 
+											color = 'deep-orange accent-3'
+											function = {(()=>{
+												const product = {
+													type: item.type,
+													price: item.price,
+												};
+												this.weaponOrdered(product);
+											})}
+											del = {(()=>{
+												console.log('h');
+											})}
+					/>
+				)
+			});
+		};
 		if (uid) {
 			return (
 				<React.Fragment>
-					<Nav />
+					<Nav desayuno = {this.goMenuDesayuno}
+							 almuerzo = {this.goMenuAlmuerzo} />
 					<Row className='section-menu'>
-						<input className='col s10  offset-s1' type='text' placeholder='Nombre del Cliente' />
+						<input className='col s6  offset-s3' type='text' placeholder='¿A nombre de quien va la orden?' ref={dinerWrite} />
 						<Row >
-							{
-								buttonsMenuDs
-							}
+							<div className='col s12 m6'>
+								{
+									buttonsMenu
+								}
+							</div>
+							<div className='col s12 m6'>
+								<Command 	diner= {this.state.diner}
+												  order={this.state.order}
+								/>
+							</div>
 						</Row>
-						<div >
-							{
-								buttonsMenuAl
-							}
-						</div>
-						<div>
-							<Command/>
-						</div>
 					</Row>
 
 				</React.Fragment>

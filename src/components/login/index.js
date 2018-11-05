@@ -13,14 +13,18 @@ class Login extends Component {
 
 	componentDidMount () {
     auth.onAuthStateChanged(user => {
-      this.setState({
-        uid: user.uid
-      })
-    })
-  }
+			if(user) {
+				this.setState({
+					uid: user.uid
+				});
+			};
+    });
+  };
 
 
-	onSesion = (email, password) => initSesion(email, password);
+	onSesion = (email, password) => {
+		initSesion(email, password);
+	}
 
 	render() {
 		const {uid} = this.state;

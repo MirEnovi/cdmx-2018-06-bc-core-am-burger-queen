@@ -6,7 +6,6 @@
 
 .nav-logo {
   margin-top: .3em;
-  margin-left: 3em;
 	height: 2em;
 	width: 2.5em;
 }
@@ -16,7 +15,12 @@
 }
 
 .nav-button {
-  margin-top: .3em;
-  margin-left: 1em;
+  margin: .3em;
+  font-size: .5em;
+}
+
+.font-nav {
+  display: flex;
   font-size: .8em;
+  /* margin-right: .8em; */
 }

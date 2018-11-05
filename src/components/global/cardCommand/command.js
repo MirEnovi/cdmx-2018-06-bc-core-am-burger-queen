@@ -1,14 +1,53 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import './command.css';
 
-const Command = () => {
+const Command = (props) => {
+	const itmesTotal = (props.order).length;
+	let orderTotal = 0;
+
+	const order = (props.order).map((item, index) => {
+		let orderPrice = parseInt(item.price);
+		orderTotal += orderPrice;
+
+		return (
+			<div key={`product-${index}`} className='col s10 offset-s1 card height-c-command blue-grey darken-3'>
+				<div className='col s9 card-content white-text valign-wrapper left'>
+					<p>{`${item.type} ${item.price}`}</p>
+					{/* <p className='col s2'>{item.price}</p> */}
+				</div>
+				<button className='btn waves-effect waves-light red darken-2 delte-item '>
+						<i className='material-icons'>delete</i>
+					</button>
+			</div>
+		);
+	});
+
 	return (
 		<React.Fragment>
-			<div className="col s6 offset-s6">
-				<div className="card blue-grey darken-1">
-					<div className="card-content white-text">
-						<span className="card-title">Card Title</span>
-						<p>I am a very simple card. I am good at containing small bits of information.
-						I am convenient because I require little markup to use effectively.</p>
+			<div className='col s12'>
+				<div className='card blue-grey darken-4'>
+					<div className='card-content white-text'>
+						<p>
+							Esta orden es para: 
+						<span className='card-title'>{props.diner}</span>
+						</p>
+						{
+							order
+						}
+
+						<div className='col s10 offset-s1 card blue-grey darken-2 height-c-command'>
+							<div className='row card-content yellow-text valign-wrapper'>
+								<p>
+									{itmesTotal} Productos, <span className='total'>{` Total: $${orderTotal}`}.-</span>
+								</p>
+								
+							</div>
+						</div>
+
+						<a className='yellow darken-4 waves-effect waves-light btn-large'>
+							Enviar a Cocina
+						</a>
 					</div>
 				</div>
 			</div>

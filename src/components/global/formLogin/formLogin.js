@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Row } from 'react-materialize';
+import { Row } from 'react-materialize';
+// import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/burguerB3.png';
 import ResetPass from '../resetPass/resetPass';
@@ -21,6 +22,7 @@ class FormLogin extends Component {
 		this.props.login(u.user, u.password);
 	};
 
+	menuDesayuno
 
 	render() {
 		const { user, password } = this;
@@ -34,7 +36,9 @@ class FormLogin extends Component {
 						<input className='col s10 l6 offset-s1 offset-l3' type='email' placeholder='Usuario' ref = {user}/>
 						<input className=' col s10 l6 offset-s1 offset-l3' type='password' placeholder='Contraseña' ref = {password}/>
 						<Row>
-							<button className='hoverable yellow darken-4 waves-effect waves-light btn col s10 l6 offset-s1 offset-l3 login-button' onClick={this.signIn}>Entrar</button>
+							<button type ='button' className='hoverable yellow darken-4 waves-effect waves-light btn col s10 l6 offset-s1 offset-l3 login-button' onClick={this.signIn}>
+							Entrar
+							</button>
 						</Row>
 						<Row>
 							<ResetPass/>
