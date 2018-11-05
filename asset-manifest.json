@@ -1,7 +1,7 @@
 {
   "main.css": "/cdmx-2018-06-bc-core-am-burger-queen/static/css/main.a9b53a03.chunk.css",
-  "main.js": "/cdmx-2018-06-bc-core-am-burger-queen/static/js/main.141885a7.chunk.js",
-  "main.js.map": "/cdmx-2018-06-bc-core-am-burger-queen/static/js/main.141885a7.chunk.js.map",
+  "main.js": "/cdmx-2018-06-bc-core-am-burger-queen/static/js/main.d4e99788.chunk.js",
+  "main.js.map": "/cdmx-2018-06-bc-core-am-burger-queen/static/js/main.d4e99788.chunk.js.map",
   "static/js/1.651ff900.chunk.js": "/cdmx-2018-06-bc-core-am-burger-queen/static/js/1.651ff900.chunk.js",
   "static/js/1.651ff900.chunk.js.map": "/cdmx-2018-06-bc-core-am-burger-queen/static/js/1.651ff900.chunk.js.map",
   "runtime~main.js": "/cdmx-2018-06-bc-core-am-burger-queen/static/js/runtime~main.db300044.js",
@@ -10,6 +10,6 @@
   "static/media/burguerB3.png": "/cdmx-2018-06-bc-core-am-burger-queen/static/media/burguerB3.563bde50.png",
   "static/media/burguerB2.png": "/cdmx-2018-06-bc-core-am-burger-queen/static/media/burguerB2.a4e552c5.png",
   "index.html": "/cdmx-2018-06-bc-core-am-burger-queen/index.html",
-  "precache-manifest.c0b47a825af8e22719ed9d693379c1f9.js": "/cdmx-2018-06-bc-core-am-burger-queen/precache-manifest.c0b47a825af8e22719ed9d693379c1f9.js",
+  "precache-manifest.d8af0f81478601f0887421670a4d3cdc.js": "/cdmx-2018-06-bc-core-am-burger-queen/precache-manifest.d8af0f81478601f0887421670a4d3cdc.js",
   "service-worker.js": "/cdmx-2018-06-bc-core-am-burger-queen/service-worker.js"
 }
