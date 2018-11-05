@@ -1,57 +1,79 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { Row } from 'react-materialize';
 
+import './style.css';
 import { auth } from '../../config/firebase';
-import MenuData from '../../data/menu';
+import MenuData from '../../data/menu.json';
 import Nav from '../global/nav/nav';
 import ButtonMenu from '../global/button/button';
+import Command from '../global/cardCommand/command';
 
 class Menu extends Component {
 	constructor() {
 		super()
-		this.state={
-			uid:null
+		this.state = {
+			uid: null,
+			menuDesayuno: false,
+			menuAlmuerzo: true
 		}
 	}
 
 	componentWillMount = () => {
-    console.log('componentWillMount menu');
-    const user = auth.currentUser;
-    if (user) {   
-      this.setState({ uid:user.uid })
-    }
+		const user = auth.currentUser;
+		if (user) {
+			this.setState({
+				uid: user.uid
+			})
+		}
 	}
-	
-	componentDidMount = () => {
-		MenuData.map((item, index) => {
-			// for (let i = 0; i>2; i++) {
-			// 	return console.log(item[i][index])
-			// }
+
+
+
+	render() {
+		const buttonsMenuAl = (MenuData.Almuerzo).map((item, index) => {
 			return (
-				console.log(index)
-				);
+				<ButtonMenu index = {index}
+										type = {item.type}
+										price = {item.price} 
+										color = 'deep-orange accent-3'
+										/>
+			)
 		});
-	}
-
-
-	render () {
-
-		const { uid } = this.state;
-		if(uid) {
+		const buttonsMenuDs = (MenuData.Desayuno).map((item, index) => {
 			return (
-				<section>
+				<ButtonMenu index = {index}
+										type = {item.type}
+										price = {item.price} 
+										color = 'cyan darken-4' />
+			)
+		});
+		const { uid } = this.state;
+		if (uid) {
+			return (
+				<React.Fragment>
 					<Nav />
-					{
-						
-						MenuData.map((item, index) => <ButtonMenu 
-								key = {index}
-								type = {item.Desayuno[index].type}
-							/>
-						)
-					}
-				</section>
+					<Row className='section-menu'>
+						<input className='col s10  offset-s1' type='text' placeholder='Nombre del Cliente' />
+						<Row >
+							{
+								buttonsMenuDs
+							}
+						</Row>
+						<div >
+							{
+								buttonsMenuAl
+							}
+						</div>
+						<div>
+							<Command/>
+						</div>
+					</Row>
+
+				</React.Fragment>
 			);
-		} return <Redirect to = '/'/>;
+		};
+		return <Redirect to = '/' /> ;
 	}
 }
 

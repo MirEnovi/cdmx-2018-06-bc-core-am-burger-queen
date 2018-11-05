@@ -1,10 +1,13 @@
 import React from 'react';
-import {Button} from 'react-materialize';
+// import {Button} from 'react-materialize';
 
 const ButtonMenu = (props) => {
-    return(
-			<Button key = {props.index} ClassName =' blue '>{props.type}</Button>
-    );
+	return (
+		<a className={`waves-effect waves-light btn-large ${props.color}`} key = {props.index}>
+			{`${props.type} - $${props.price}`}
+		</a>
+		// <a ClassName ='waves-effect waves-light btn pink darken-1' key = {props.index} > {`${props.type} - $${props.price}`} </a>
+	);
 }
 
 export default ButtonMenu;
