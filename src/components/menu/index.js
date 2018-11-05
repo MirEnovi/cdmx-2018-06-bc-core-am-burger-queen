@@ -1,57 +1,148 @@
+/* eslint-disable no-redeclare */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { Row } from 'react-materialize';
 
+import './style.css';
 import { auth } from '../../config/firebase';
-import MenuData from '../../data/menu';
+import MenuData from '../../data/menu.json';
 import Nav from '../global/nav/nav';
-import ButtonMenu from '../global/button/button';
+import {ButtonMenu} from '../global/button/button';
+import Command from '../global/cardCommand/command';
 
 class Menu extends Component {
 	constructor() {
 		super()
-		this.state={
-			uid:null
-		}
+		this.state = {
+			uid: null,
+			menuDesayuno: false,
+			menuAlmuerzo: true,
+			order:[],
+			diner: 'Cliente'
+		};
+		this.dinerWrite = React.createRef();
+
 	}
 
 	componentWillMount = () => {
-    console.log('componentWillMount menu');
-    const user = auth.currentUser;
-    if (user) {   
-      this.setState({ uid:user.uid })
-    }
+		const user = auth.currentUser;
+		if (user) {
+			this.setState({
+				uid: user.uid
+			});
+		};
+	};
+
+	componentDidMount = () => {
+		this.setState({
+			diner:this.dinerWrite.current.value
+		});
+	};
+
+	goMenuAlmuerzo = () => {
+		this.setState({
+			menuDesayuno: false,
+			menuAlmuerzo: true
+		})
+	};
+
+	goMenuDesayuno = () => {
+		this.setState({
+			menuDesayuno: true,
+			menuAlmuerzo: false
+		})
+	}
+
+	weaponOrdered = (product) => {
+		this.setState({
+			diner:this.dinerWrite.current.value
+		});
+		const {order} = this.state;
+		order.push(product);
+		this.setState({
+			order
+		});
+		console.log(this.state.order);
+	};
+
+	deleteItem = (index) => {
+		console.log(index);
+		// const {order} = this.state;
+		// order.splice(index, 1);
+		// console.log(order);
 	}
 	
-	componentDidMount = () => {
-		MenuData.map((item, index) => {
-			// for (let i = 0; i>2; i++) {
-			// 	return console.log(item[i][index])
-			// }
+	
+	render() {
+		const { uid, menuDesayuno, menuAlmuerzo } = this.state;
+		const {dinerWrite} = this;
+		if (menuDesayuno){
+			var buttonsMenu = (MenuData.Desayuno).map((item, index) => {
+				return (
+					<ButtonMenu keyI = {`desayuno-${index}`}
+											type = {item.type}
+											price = {item.price} 
+											color = 'cyan darken-4'
+											function = {(()=>{
+												const product = {
+													type: item.type,
+													price: item.price,
+												};
+												this.weaponOrdered(product);
+											})}
+											del = {(()=>{
+												const i = index;
+												this.deleteItem(i);
+											})}
+											/>
+				)
+			});
+		} else if (menuAlmuerzo) {
+			var buttonsMenu = (MenuData.Almuerzo).map((item, index) => {
+				return (
+					<ButtonMenu keyI = {`almuerzo-${index}`}
+											type = {item.type}
+											price = {item.price} 
+											color = 'deep-orange accent-3'
+											function = {(()=>{
+												const product = {
+													type: item.type,
+													price: item.price,
+												};
+												this.weaponOrdered(product);
+											})}
+											del = {(()=>{
+												console.log('h');
+											})}
+					/>
+				)
+			});
+		};
+		if (uid) {
 			return (
-				console.log(index)
-				);
-		});
-	}
+				<React.Fragment>
+					<Nav desayuno = {this.goMenuDesayuno}
+							 almuerzo = {this.goMenuAlmuerzo} />
+					<Row className='section-menu'>
+						<input className='col s6  offset-s3' type='text' placeholder='¿A nombre de quien va la orden?' ref={dinerWrite} />
+						<Row >
+							<div className='col s12 m6'>
+								{
+									buttonsMenu
+								}
+							</div>
+							<div className='col s12 m6'>
+								<Command 	diner= {this.state.diner}
+												  order={this.state.order}
+								/>
+							</div>
+						</Row>
+					</Row>
 
-
-	render () {
-
-		const { uid } = this.state;
-		if(uid) {
-			return (
-				<section>
-					<Nav />
-					{
-						
-						MenuData.map((item, index) => <ButtonMenu 
-								key = {index}
-								type = {item.Desayuno[index].type}
-							/>
-						)
-					}
-				</section>
+				</React.Fragment>
 			);
-		} return <Redirect to = '/'/>;
+		};
+		return <Redirect to = '/' /> ;
 	}
 }
 

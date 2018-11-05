@@ -1,15 +1,11 @@
 .nav-header {
   background-color: #282c34;
-  /* min-height: 10vh; */
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: stretch; */
-  /* justify-content: center;  */
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.Nav-logo {
+.nav-logo {
+  margin-top: .3em;
 	height: 2em;
 	width: 2.5em;
 }
@@ -19,5 +15,12 @@
 }
 
 .nav-button {
-  margin-left: 3em;
+  margin: .3em;
+  font-size: .5em;
+}
+
+.font-nav {
+  display: flex;
+  font-size: .8em;
+  /* margin-right: .8em; */
 }
