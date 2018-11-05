@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 class Content extends Component {
-  static PropTypes = {
-    body: PropTypes.object.isRequired
+  static propTypes = {
+    body: propTypes.object.isRequired
   };
   render() {
 		const { body } = this.props;

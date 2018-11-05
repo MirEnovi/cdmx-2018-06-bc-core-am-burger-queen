@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import './App.css';
 
 import Content from '../global/content/content';
 
 class App extends Component {
-  static PropTypes = {
-    children: PropTypes.object.isRequired
+  static propTypes = {
+    children: propTypes.object.isRequired
   };
 
   render() {

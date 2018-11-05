@@ -20,7 +20,7 @@ export default firebase;
 export const initSesion = (email, password) => {
 	auth.signInWithEmailAndPassword(email, password)
 		.then((res) => { 
-			// console.log(res);
+			console.log(`conectado ${res}`);
 			return })
 		// .then(()=>)
 		.catch((error) => {
@@ -40,4 +40,15 @@ export const logout = () => {
 		return
 	})
 	.catch((error) => console.log(`Error: ${error.code}: ${error.message}`));	
+}
+
+export const PasswordReset = (emailAddress) => {
+	// const emailAddress = "user@example.com";
+
+	auth.sendPasswordResetEmail(emailAddress).then(() => {
+	// Email sent.
+	alert(`revisa tu email: ${emailAddress}`);
+	}).catch(function(error) {
+	// An error happened.
+	});
 }

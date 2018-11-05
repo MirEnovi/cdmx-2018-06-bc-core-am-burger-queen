@@ -1,10 +1,20 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import {Button} from 'react-materialize';
+import './button.css';
 
-const ButtonMenu = (props) => {
-    return(
-			<Button key = {props.index} ClassName =' blue '>{props.type}</Button>
-    );
+export const ButtonMenu = (props) => {
+	return (
+		<button className={`margin-button-menu waves-effect waves-light btn-large ${props.color}`} key = {props.keyI} onClick={props.function}>
+			{`${props.type} - $${props.price}`}
+		</button>
+	);
 }
 
-export default ButtonMenu;
+
+// export const ButtonApp = (props) => {
+// 	return (
+// 		<a onClick={this.offSesion} className='nav-button yellow darken-4 btn-large'>
+// 		<Link to = '/'>Salir</Link>	
+// 		</a>
+// 	);
+// };
