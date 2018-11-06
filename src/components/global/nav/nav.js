@@ -14,14 +14,18 @@ const Nav = (props) => {
 	return (
 		<header >
 			<nav  className='row nav-header'>
-				<div className='col s10 offset-s1 nav-margin'>
-					<img src={logo} className='nav-logo ' alt='logo burger' />
-					<h2 className= 'font-nav font-title'>Burger <span className='font-queen'>Queen</span></h2>
-					<a onClick={props.desayuno} className='truncate nav-button cyan darken-4 waves-effect waves-light btn-large'>Desayuno</a>
-					<a onClick={props.almuerzo} className='truncate nav-button deep-orange accent-3 waves-effect waves-light btn-large'>Almuerzo y Cena</a>
-					<a onClick={offSesion} className='nav-button yellow darken-4 waves-effect waves-light btn-large '>
-					<Link to = '/'>Salir</Link>	
-					</a>
+				<div className='col s11 offset-s1 nav-margin'>
+					<img src={logo} className='nav-logo col s2 right-align' alt='logo burger' />
+
+					<h2 className= 'font-nav font-title col s3 left '>Burger <span className='font-queen'>Queen</span></h2>
+
+					<div className='col s7'>
+						<a onClick={props.desayuno} className='truncate nav-button cyan darken-4 waves-effect waves-light btn-large'>Desayuno</a>
+						<a onClick={props.almuerzo} className='truncate nav-button deep-orange accent-3 waves-effect waves-light btn-large'>Almuerzo y Cena</a>
+						<a onClick={offSesion} className='nav-button yellow darken-4 waves-effect waves-light btn-large '>
+							<Link to = '/'>Salir</Link>	
+						</a>
+					</div>
 				</div>
 			</nav>
 		</header>

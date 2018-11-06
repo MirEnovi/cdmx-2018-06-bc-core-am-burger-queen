@@ -6,17 +6,20 @@ const Command = (props) => {
 	const itmesTotal = (props.order).length;
 	let orderTotal = 0;
 
+
+
 	const order = (props.order).map((item, index) => {
 		let orderPrice = parseInt(item.price);
 		orderTotal += orderPrice;
-
+		const deleteItem = () => {
+			props.delete(index);
+		}
 		return (
 			<div key={`product-${index}`} className='col s10 offset-s1 card height-c-command blue-grey darken-3'>
 				<div className='col s9 card-content white-text valign-wrapper left'>
 					<p>{`${item.type} ${item.price}`}</p>
-					{/* <p className='col s2'>{item.price}</p> */}
 				</div>
-				<button className='btn waves-effect waves-light red darken-2 delte-item '>
+				<button className='btn waves-effect waves-light red darken-2 delte-item' onClick={deleteItem}>
 						<i className='material-icons'>delete</i>
 					</button>
 			</div>

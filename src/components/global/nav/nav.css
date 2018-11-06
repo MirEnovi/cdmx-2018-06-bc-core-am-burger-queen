@@ -20,7 +20,11 @@
 }
 
 .font-nav {
-  display: flex;
+  /* display: flex; */
   font-size: .8em;
   /* margin-right: .8em; */
+}
+
+.nav-buttons {
+  margin-left: 25%;
 }
