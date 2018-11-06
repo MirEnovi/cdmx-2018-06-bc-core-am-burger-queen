@@ -1,30 +1,44 @@
 .nav-header {
   background-color: #282c34;
-  font-size: calc(10px + 2vmin);
+  line-height: 1.5em;
+  font-size: calc(1em - 1vmin);
   color: white;
-}
+ };
 
-.nav-logo {
-  margin-top: .3em;
-	height: 2em;
-	width: 2.5em;
-}
+ .font-nav {
+  font-size: 2em !important ;
+  line-height: .8 !important;
+  margin: .5rem 0 1.424rem 0 !important;
+};
 
-.nav-margin{
+/*.nav-margin{
   display: flex;
 }
 
 .nav-button {
   margin: .3em;
-  font-size: .5em;
-}
+  font-size: 1.3em;
+};
 
-.font-nav {
-  /* display: flex; */
-  font-size: .8em;
-  /* margin-right: .8em; */
-}
+
 
 .nav-buttons {
   margin-left: 25%;
-}
+};
+
+@media screen and (max-width: 320px) {
+  .nav-button {
+    margin: .3em;
+    font-size: .8em;
+  };
+  .font-nav {
+    display: flex;
+    font-size: 1em;
+
+  };
+  .nav-logo {
+    margin-top: 1em;
+    height: 3em;
+  };
+  
+} */

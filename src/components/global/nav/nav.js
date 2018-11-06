@@ -14,15 +14,16 @@ const Nav = (props) => {
 	return (
 		<header >
 			<nav  className='row nav-header'>
-				<div className='col s11 offset-s1 nav-margin'>
-					<img src={logo} className='nav-logo col s2 right-align' alt='logo burger' />
+				<div className='col s11 offset-s1 '>
 
-					<h2 className= 'font-nav font-title col s3 left '>Burger <span className='font-queen'>Queen</span></h2>
+					<img src={logo} className='col s3 m2 l1  right-align' alt='logo burger' />
 
-					<div className='col s7'>
-						<a onClick={props.desayuno} className='truncate nav-button cyan darken-4 waves-effect waves-light btn-large'>Desayuno</a>
-						<a onClick={props.almuerzo} className='truncate nav-button deep-orange accent-3 waves-effect waves-light btn-large'>Almuerzo y Cena</a>
-						<a onClick={offSesion} className='nav-button yellow darken-4 waves-effect waves-light btn-large '>
+					<p className= 'col s3 font-nav'>Burger <span className='font-queen'>Queen</span></p>
+
+					<div className='col s6'>
+						<a onClick={props.desayuno} className='truncate waves-effect waves-light btn cyan darken-4'>Desayuno</a>
+						<a onClick={props.almuerzo} className='truncate waves-effect waves-light btn deep-orange accent-3'>Almuerzo y Cena</a>
+						<a onClick={offSesion} className=' yellow darken-4 waves-effect waves-light btn '>
 							<Link to = '/'>Salir</Link>	
 						</a>
 					</div>

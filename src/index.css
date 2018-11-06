@@ -23,3 +23,9 @@ code {
 .font-queen {
   font-family: 'Pacifico', cursive;
 }
+
+.btn {
+  border-radius: 5px;
+  padding: 0 .5rem;
+  height: 3em;
+}
