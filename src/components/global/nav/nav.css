@@ -1,15 +1,47 @@
 .nav-header {
   background-color: #282c34;
-  line-height: 1.5em;
-  font-size: calc(1em - 1vmin);
+  font-size: calc(8px + 2.5vmin);
   color: white;
- };
+}
 
- .font-nav {
-  font-size: 2em !important ;
-  line-height: .8 !important;
-  margin: .5rem 0 1.424rem 0 !important;
-};
+.nav-logo {
+  margin-top: .3em;
+	height: 2em;
+}
+
+.nav-margin{
+  display: flex;
+}
+
+.nav-button {
+  margin: .5em;
+}
+
+.font-nav {
+  display: flex;
+  font-size: .8em;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-button {
+    font-size: .1em;
+    margin: .4em;
+    border-radius: 50%;
+  };
+  .font-nav {
+    font-size: .6em;
+  }
+}
+
+
+/* .nav-header {
+  background-color: #282c34;
+  line-height: 1em;
+  font-size: calc(1em + 1vmin);
+  color: white;
+}; */
+
+
 
 /*.nav-margin{
   display: flex;

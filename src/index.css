@@ -10,6 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #444444;
   color: rgb(223, 223, 226);
+
 }
 
 code {
@@ -24,8 +25,10 @@ code {
   font-family: 'Pacifico', cursive;
 }
 
-.btn {
+.btn, .btn-large {
   border-radius: 5px;
   padding: 0 .5rem;
-  height: 3em;
+  font-size: calc(8px + 2.5vmin);
 }
+
+
