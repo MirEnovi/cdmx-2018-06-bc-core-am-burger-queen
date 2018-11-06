@@ -1,13 +1,12 @@
 .nav-header {
   background-color: #282c34;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2.5vmin);
   color: white;
 }
 
 .nav-logo {
   margin-top: .3em;
 	height: 2em;
-	width: 2.5em;
 }
 
 .nav-margin{
@@ -15,12 +14,63 @@
 }
 
 .nav-button {
-  margin: .3em;
-  font-size: .5em;
+  margin: .5em;
 }
 
 .font-nav {
   display: flex;
   font-size: .8em;
-  /* margin-right: .8em; */
 }
+
+@media screen and (max-width: 600px) {
+  .nav-button {
+    font-size: .1em;
+    margin: .4em;
+    border-radius: 50%;
+  };
+  .font-nav {
+    font-size: .6em;
+  }
+}
+
+
+/* .nav-header {
+  background-color: #282c34;
+  line-height: 1em;
+  font-size: calc(1em + 1vmin);
+  color: white;
+}; */
+
+
+
+/*.nav-margin{
+  display: flex;
+}
+
+.nav-button {
+  margin: .3em;
+  font-size: 1.3em;
+};
+
+
+
+.nav-buttons {
+  margin-left: 25%;
+};
+
+@media screen and (max-width: 320px) {
+  .nav-button {
+    margin: .3em;
+    font-size: .8em;
+  };
+  .font-nav {
+    display: flex;
+    font-size: 1em;
+
+  };
+  .nav-logo {
+    margin-top: 1em;
+    height: 3em;
+  };
+  
+} */

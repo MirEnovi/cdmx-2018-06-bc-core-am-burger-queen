@@ -62,14 +62,14 @@ class Menu extends Component {
 		this.setState({
 			order
 		});
-		console.log(this.state.order);
 	};
 
 	deleteItem = (index) => {
-		console.log(index);
-		// const {order} = this.state;
-		// order.splice(index, 1);
-		// console.log(order);
+		const {order} = this.state;
+		order.splice(index, 1);
+		this.setState({
+			order
+		});
 	}
 	
 	
@@ -90,10 +90,6 @@ class Menu extends Component {
 												};
 												this.weaponOrdered(product);
 											})}
-											del = {(()=>{
-												const i = index;
-												this.deleteItem(i);
-											})}
 											/>
 				)
 			});
@@ -111,9 +107,6 @@ class Menu extends Component {
 												};
 												this.weaponOrdered(product);
 											})}
-											del = {(()=>{
-												console.log('h');
-											})}
 					/>
 				)
 			});
@@ -121,8 +114,8 @@ class Menu extends Component {
 		if (uid) {
 			return (
 				<React.Fragment>
-					<Nav desayuno = {this.goMenuDesayuno}
-							 almuerzo = {this.goMenuAlmuerzo} />
+					<Nav	desayuno = {this.goMenuDesayuno}
+								almuerzo = {this.goMenuAlmuerzo} />
 					<Row className='section-menu'>
 						<input className='col s6  offset-s3' type='text' placeholder='¿A nombre de quien va la orden?' ref={dinerWrite} />
 						<Row >
@@ -133,7 +126,8 @@ class Menu extends Component {
 							</div>
 							<div className='col s12 m6'>
 								<Command 	diner= {this.state.diner}
-												  order={this.state.order}
+													order={this.state.order}
+													delete={this.deleteItem}
 								/>
 							</div>
 						</Row>

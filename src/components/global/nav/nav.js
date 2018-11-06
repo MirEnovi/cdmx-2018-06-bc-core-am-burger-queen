@@ -13,13 +13,33 @@ const Nav = (props) => {
 
 	return (
 		<header >
-			<nav  className='row nav-header'>
+			{/* <nav  className='row nav-header'>
 				<div className='col s10 offset-s1 nav-margin'>
-					<img src={logo} className='nav-logo ' alt='logo burger' />
-					<h2 className= 'font-nav font-title'>Burger <span className='font-queen'>Queen</span></h2>
-					<a onClick={props.desayuno} className='truncate nav-button cyan darken-4 waves-effect waves-light btn-large'>Desayuno</a>
-					<a onClick={props.almuerzo} className='truncate nav-button deep-orange accent-3 waves-effect waves-light btn-large'>Almuerzo y Cena</a>
-					<a onClick={offSesion} className='nav-button yellow darken-4 waves-effect waves-light btn-large '>
+					<img src={logo} className='nav-logo col s2 m1' alt='logo burger' />
+
+					<h2 className= 'font-nav font-title col s5'>Burger <span className='font-queen'>Queen</span></h2>
+
+					<div className=''>
+						<a onClick={props.desayuno} className='truncate waves-effect waves-light btn cyan darken-4'>Desayuno</a>
+						<a onClick={props.almuerzo} className='truncate waves-effect waves-light btn deep-orange accent-3'>Almuerzo y Cena</a>
+						<a onClick={offSesion} className=' yellow darken-4 waves-effect waves-light btn '>
+							<Link to = '/'>Salir</Link>	
+						</a>
+					</div>
+				</div>
+			</nav> */}
+			<nav  className='row nav-header'>
+				<div className='col s12 l10 offset-l1 nav-margin'>
+
+					<img src={logo} className='nav-logo col s2 m1' alt='logo burger' />
+
+					<h2 className= 'font-nav font-title col m3'>Burger <span className='font-queen'>Queen</span></h2>
+
+					<a onClick={props.desayuno} className='truncate waves-effect waves-light btn cyan darken-4 nav-button col m3'>Desayuno</a>
+
+					<a onClick={props.almuerzo} className='truncate waves-effect waves-light btn deep-orange accent-3 nav-button col m5'>Almuerzo y Cena</a>
+
+					<a onClick={offSesion} className='truncate waves-effect waves-light btn yellow darken-4 nav-button right-align col m2'>
 					<Link to = '/'>Salir</Link>	
 					</a>
 				</div>

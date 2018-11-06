@@ -36,7 +36,7 @@ class FormLogin extends Component {
 						<input className='col s10 l6 offset-s1 offset-l3' type='email' placeholder='Usuario' ref = {user}/>
 						<input className=' col s10 l6 offset-s1 offset-l3' type='password' placeholder='Contraseña' ref = {password}/>
 						<Row>
-							<button type ='button' className='hoverable yellow darken-4 waves-effect waves-light btn col s10 l6 offset-s1 offset-l3 login-button' onClick={this.signIn}>
+							<button type ='button' className='hoverable yellow darken-4 waves-effect waves-light btn-large col s10 l6 offset-s1 offset-l3 login-button' onClick={this.signIn}>
 							Entrar
 							</button>
 						</Row>

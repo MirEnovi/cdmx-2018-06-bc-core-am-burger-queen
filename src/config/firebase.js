@@ -11,7 +11,7 @@ const firebaseCredentials = {
 
 firebase.initializeApp(firebaseCredentials);
 export const auth = firebase.auth();
-// const db = firebase.firestore();
+const db = firebase.firestore();
 
 
 export default firebase;
@@ -51,4 +51,8 @@ export const PasswordReset = (emailAddress) => {
 	}).catch(function(error) {
 	// An error happened.
 	});
+}
+
+export const sendOrder = () => {
+
 }
