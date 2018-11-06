@@ -27,50 +27,8 @@
     font-size: .1em;
     margin: .4em;
     border-radius: 50%;
-  };
+  }
   .font-nav {
     font-size: .6em;
   }
 }
-
-
-/* .nav-header {
-  background-color: #282c34;
-  line-height: 1em;
-  font-size: calc(1em + 1vmin);
-  color: white;
-}; */
-
-
-
-/*.nav-margin{
-  display: flex;
-}
-
-.nav-button {
-  margin: .3em;
-  font-size: 1.3em;
-};
-
-
-
-.nav-buttons {
-  margin-left: 25%;
-};
-
-@media screen and (max-width: 320px) {
-  .nav-button {
-    margin: .3em;
-    font-size: .8em;
-  };
-  .font-nav {
-    display: flex;
-    font-size: 1em;
-
-  };
-  .nav-logo {
-    margin-top: 1em;
-    height: 3em;
-  };
-  
-} */
