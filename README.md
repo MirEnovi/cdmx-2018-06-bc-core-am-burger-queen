@@ -1,5 +1,7 @@
 # Burger Queen
 
+![BQPOS](./src/components/assets/burger.png)
+
 ## Preámbulo
 
 Nos acaban de enviar un correo con una solicitud para un nuevo proyecto. Hay un

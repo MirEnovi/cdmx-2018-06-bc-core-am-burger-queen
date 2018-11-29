@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Row } from 'react-materialize';
-// import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/burguerB3.png';
 import ResetPass from '../resetPass/resetPass';
