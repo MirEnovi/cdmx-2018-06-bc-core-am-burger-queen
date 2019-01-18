@@ -1,6 +1,10 @@
 # Burger Queen
 
-![BQPOS](./src/components/assets/burger.png)
+![BQPOS](./src/components/assets/burger.png).
+
+### Usuario: user@email.com.
+### Contraseña: 123456
+
 
 ## Preámbulo
 
